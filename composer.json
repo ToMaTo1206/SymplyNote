@@ -1,0 +1,18 @@
+{
+    "name": "titit/symply-note",
+    "description": "Application web minimaliste pour prendre des notes.",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Titit\\SymplyNote\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Thomas Denoyelle",
+            "email": "thomas.denoyelle@etudiant.univ-reims.fr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
