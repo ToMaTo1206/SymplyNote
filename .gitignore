@@ -1,0 +1,32 @@
+# PhpStorm / JetBrains
+.idea/
+*.iml
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Logs et cache
+*.log
+*.cache
+*.tmp
+*.swp
+
+# Dépendances PHP (si tu utilises Composer)
+vendor/
+
+# Dépendances JS (si tu ajoutes du front avec npm/yarn)
+node_modules/
+
+# Config sensibles
+.env
+.env.local
+.env.*.local
+
+# Fichiers de build (si tu ajoutes un jour webpack, vite...)
+dist/
+build/
+
+# Sessions / uploads temporaires
+sessions/
+uploads/tmp/
