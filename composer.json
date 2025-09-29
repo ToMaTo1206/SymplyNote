@@ -14,5 +14,19 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "scripts": {
+        "fix:cs": [
+            "php-cs-fixer fix"
+        ],
+        "test:cs" : [
+            "php-cs-fixer fix --dry-run"
+        ],
+        "test" : [
+            "@test:cs"
+        ]
+
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.88"
+    }
 }
