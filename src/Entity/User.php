@@ -17,6 +17,16 @@ class User
 
     private string $login;
 
+    private string $phone;
+
+    /**
+     * @return string
+     */
+    public function getPhone(): string
+    {
+        return $this->phone;
+    }
+
     /**
      * @return int
      */
