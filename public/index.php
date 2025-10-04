@@ -6,6 +6,7 @@ use Html\AppWebPage;
 
 $webPage = new AppWebPage('Gestion des données de session - authentification');
 
+$webPage->appendContent("<div class='content-left'>");
 $webPage->appendContent(
     <<<HTML
     <h2>Tests</h2>
@@ -16,6 +17,13 @@ $webPage->appendContent(
     <ul>
         <li><a href="form.php">Formulaire de connexion</a>
     </ul>
+HTML
+);
+$webPage->appendContent('</div>');
+
+$webPage->appendContent("<div class='content-right'>");
+$webPage->appendContent(
+    <<<HTML
     <h2>Pages</h2>
     <ul>
         <li><a href="connected.php">Zone membre connecté</a>
@@ -23,5 +31,8 @@ $webPage->appendContent(
     </ul>
 HTML
 );
+$webPage->appendContent('</div>');
+
+
 
 echo $webPage->toHTML();
