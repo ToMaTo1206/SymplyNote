@@ -23,13 +23,11 @@ class UserProfile
 
     public function toHtml(): string
     {
-        $html = <<<HTML
+        return <<<HTML
 <p>Nom : {$this->escapeString((string) $this->user->getLastName())}</p>
 <p>Prénom : {$this->escapeString((string) $this->user->getFirstName())}</p>
 <p>Login : {$this->escapeString((string) $this->user->getLogin())}</p>
 <p>Téléphone : {$this->escapeString((string) $this->user->getPhone())}</p>
 HTML;
-
-        return $html;
     }
 }
