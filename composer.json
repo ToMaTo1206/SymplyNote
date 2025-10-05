@@ -2,11 +2,16 @@
     "name": "titit/symply-note",
     "description": "Application web minimaliste pour prendre des notes.",
     "type": "project",
-    "autoload": {
-        "psr-4": {
-            "": "src/"
-        }
-    },
+  "autoload": {
+    "psr-4": {
+      "Authentication\\": "src/Authentication/",
+      "Entity\\": "src/Entity/",
+      "Service\\": "src/Service/",
+      "Html\\": "src/Html/",
+      "Database\\": "src/Database/"
+    }
+  }
+,
     "authors": [
         {
             "name": "Thomas Denoyelle",
@@ -28,8 +33,11 @@
             "bin/run-server.sh",
             "Composer\\Config::disableProcessTimeout"
         ],
-        "start:windows": ["bin/run-server.bat","Composer\\Config::disableProcessTimeout"],
-        "start": "@start:windows"
+      "start:windows": [
+        "Composer\\Config::disableProcessTimeout",
+        "bin\\run-server.bat"
+      ],
+      "start": "@start:windows"
     },
 
 
