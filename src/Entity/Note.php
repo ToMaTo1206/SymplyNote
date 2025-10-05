@@ -40,7 +40,7 @@ class Note
         return $this->updatedAt;
     }
 
-    public function findNoteById(int $id): Note
+    public static function findNoteById(int $id): Note
     {
         $stmt = MyPdo::getInstance()->prepare(
             <<<'SQL'
