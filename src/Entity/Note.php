@@ -2,6 +2,8 @@
 
 namespace Entity;
 
+use Database\MyPdo;
+
 class Note
 {
     private int $noteId;
@@ -37,4 +39,18 @@ class Note
     {
         return $this->updatedAt;
     }
+
+    public function findNoteById(int $id): Note
+    {
+        $stmt = MyPdo::getInstance()->prepare(
+            <<<'SQL'
+    SELECT id, description
+    FROM category
+    WHERE id = :id
+SQL);
+
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetchObject(Note::class);
+    }
+
 }
