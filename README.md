@@ -33,4 +33,14 @@ Pour ajouter un utilisateur de test :
 INSERT INTO user (firstName, lastName, email, login, sha512pass, phone)
 VALUES ('votrePrénom', 'votreNom', 'votreEmail', 'votreLogin', SHA2('votreMdp', 512), 'votrePhone');
 
+Pour note:
+CREATE TABLE note ( id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+user_id INT UNSIGNED NOT NULL, title VARCHAR(255) NOT NULL, 
+content TEXT NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE );
+
+
+
+
 Le projet est encore en développement est continu à évoluer !
