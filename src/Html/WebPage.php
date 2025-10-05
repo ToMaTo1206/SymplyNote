@@ -181,8 +181,6 @@ HTML
 
     /**
      * Ajouter un contenu dans $this->body.
-     *
-     *
      */
     public function appendContent(string $content): void
     {

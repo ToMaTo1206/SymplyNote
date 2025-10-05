@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 require_once __DIR__.'/../src/Authentication/UserAuthentication.php';
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 use Authentication\Exception\NotLoggedInException;
 use Authentication\UserAuthentication;

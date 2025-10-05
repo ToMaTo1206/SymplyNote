@@ -53,7 +53,6 @@ HTML;
 
         if (!isset($_POST[self::PASSWORD_INPUT_NAME])) {
             throw new NotLoggedInException("Échec de l'authentification car pas de password");
-
         }
         $password = $_POST[self::PASSWORD_INPUT_NAME];
         $login = $_POST[self::LOGIN_INPUT_NAME];
