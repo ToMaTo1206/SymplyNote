@@ -44,8 +44,8 @@ class Note
     {
         $stmt = MyPdo::getInstance()->prepare(
             <<<'SQL'
-    SELECT id, description
-    FROM category
+    SELECT id, user_id, title, content, created_at, updated_at 
+    FROM note
     WHERE id = :id
 SQL);
 
