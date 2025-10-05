@@ -27,7 +27,7 @@ try {
 
 $webPage = new AppWebPage('Accueil - SymplyNote');
 
-$webPage->appendCssUrl("css/style.css");
+$webPage->appendCssUrl('css/style.css');
 
 $webPage->appendContent("<div class='content-left'>");
 $webPage->appendContent(

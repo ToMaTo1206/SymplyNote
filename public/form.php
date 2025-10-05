@@ -13,6 +13,7 @@ use Service\Exception\SessionException;
 
 $authentication = new UserAuthentication();
 $p = new AppWebPage('Authentification');
+$p->appendCssUrl('css/style.css');
 
 try {
     if ('POST' === $_SERVER['REQUEST_METHOD']) {
