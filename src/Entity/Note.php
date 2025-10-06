@@ -6,7 +6,7 @@ use Database\MyPdo;
 
 class Note
 {
-    private int $noteId;
+    private int $id;
 
     private string $title;
     private string $content;
@@ -15,9 +15,9 @@ class Note
 
     private string $updatedAt;
 
-    public function getNoteId(): int
+    public function getId(): int
     {
-        return $this->noteId;
+        return $this->id;
     }
 
     public function getTitle(): string
