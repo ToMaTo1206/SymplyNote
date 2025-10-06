@@ -13,7 +13,7 @@ class User
 
     private string $lastName;
 
-    private string $email;
+    private string $email = "Pas d'email renseignée";
 
     private string $login;
 
@@ -56,7 +56,7 @@ class User
     {
         $stmt = MyPdo::getInstance()->prepare(
             <<<SQL
-SELECT id, firstName, lastName,login, phone
+SELECT id, firstName, lastName,email,login, phone
 FROM user
 WHERE login = :login AND sha512pass = SHA2(:password,512)
 SQL
