@@ -49,3 +49,21 @@ body{
     align-items: center;
     padding: 10px;
 }
+
+.listNotes{
+    display: flex;
+    flex-direction: column;
+    background-color: #d3b5b5;
+    padding: 5px;
+    border: 3px solid #333;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+a{
+    display: flex;
+    border: 2px solid #333;
+
+    border-radius: 10px;
+    background-color: #c7dbe4;
+}
