@@ -37,19 +37,14 @@ $webPage->appendContent(
     <p>Login : {$user->getLogin()}</p>
     <p>Email : {$user->getEmail()}</p>
     <p>Téléphone : {$user->getPhone()}</p>
-    <h3>Liens utiles</h3>
-    <ul>
-        <li><a href="test-user.php">Classe « <code>User</code> »</a></li>
-        <li><a href="form.php">Formulaire de connexion</a></li>
-        <li><a href="connected.php">Zone membre connecté</a></li>
-        <li><a href="authenticated.php">Zone membre utilisateur</a></li>
-    </ul>
+    
 HTML
 );
+
 $webPage->appendContent('</div>');
 
-// Ajout d'un bouton de déconnexion
 $webPage->appendContent("<div class='content-right'>");
+$webPage->appendContent("<a href='notes.php'>Voir toutes les notes ?</a>");
 $webPage->appendContent($authentification->logoutForm('index.php', 'Se déconnecter'));
 $webPage->appendContent('</div>');
 
