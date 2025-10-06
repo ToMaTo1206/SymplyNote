@@ -27,6 +27,7 @@ class UserProfile
 <p>Nom : {$this->escapeString((string) $this->user->getLastName())}</p>
 <p>Prénom : {$this->escapeString((string) $this->user->getFirstName())}</p>
 <p>Login : {$this->escapeString((string) $this->user->getLogin())}</p>
+<p>Email : {$this->escapeString((string) $this->user->getEmail())}</p>
 <p>Téléphone : {$this->escapeString((string) $this->user->getPhone())}</p>
 HTML;
     }
