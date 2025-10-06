@@ -12,6 +12,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 $authentification = new UserAuthentication();
 
 try {
+    $authentification->logoutIfRequested();
     // On vérifie si l'utilisateur est connecté
     if (!$authentification->isUserConnected()) {
         header('Location: form.php');
@@ -34,6 +35,7 @@ $webPage->appendContent(
     <<<HTML
     <h2>Bienvenue {$user->getFirstName()} {$user->getLastName()}</h2>
     <p>Login : {$user->getLogin()}</p>
+    <p>Email : {$user->getEmail()}</p>
     <p>Téléphone : {$user->getPhone()}</p>
     <h3>Liens utiles</h3>
     <ul>
