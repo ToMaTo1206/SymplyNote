@@ -8,6 +8,7 @@ class Note
 {
     private int $id;
 
+    private int $user_id;
     private string $title;
     private string $content;
 
@@ -24,6 +25,15 @@ class Note
     {
         return $this->title;
     }
+
+    /**
+     * @return int
+     */
+    public function getUserId(): int
+    {
+        return $this->user_id;
+    }
+
 
     public function getContent(): string
     {
@@ -57,7 +67,7 @@ SQL);
     {
         $stmt = MyPdo::getInstance()->prepare(
             <<<'SQL'
-    DELETE id, user_id, title, content, created_at, updated_at 
+    DELETE
     FROM note
     WHERE id = :id
 SQL);
