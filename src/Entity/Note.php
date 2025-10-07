@@ -65,5 +65,16 @@ SQL);
         $stmt->execute(['id' => $this->getId()]);
     }
 
+    public function updateNote(): void
+    {
+        $stmt = MyPdo::getInstance()->prepare(
+            <<<'SQL'
+    UPDATE id, user_id, title, content, created_at, updated_at 
+    FROM note
+    WHERE id = :id
+SQL);
+
+        $stmt->execute(['id' => $this->getId()]);
+    }
 
 }
