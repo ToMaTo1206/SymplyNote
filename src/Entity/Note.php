@@ -57,7 +57,7 @@ SQL);
     {
         $stmt = MyPdo::getInstance()->prepare(
             <<<'SQL'
-    DEETE id, user_id, title, content, created_at, updated_at 
+    DELETE id, user_id, title, content, created_at, updated_at 
     FROM note
     WHERE id = :id
 SQL);
