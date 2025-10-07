@@ -34,7 +34,7 @@ foreach ($notes as $note) {
     $webPage->appendContent("<a href='note.php?id={$note->getId()}'>");
     $webPage->appendContent("<p >{$note->getTitle()}</p>");
     $webPage->appendContent('</a>');
-    $webPage->appendContent("<a href='note.php?id={$note->getId()}'>Supprimer ?</a>");
+    $webPage->appendContent("<a href='deleteNote.php?id={$note->getId()}' onclick=\"return confirm('Supprimer cette note ?')\">Supprimer</a>");
     $webPage->appendContent('</div>');
 }
 $webPage->appendContent('</div>');
