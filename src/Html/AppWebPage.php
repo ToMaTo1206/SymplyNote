@@ -6,6 +6,8 @@ namespace Html;
 
 class AppWebPage extends WebPage
 {
+
+    private string $menu = '';
     /**
      * Constructeur.
      *
@@ -17,6 +19,14 @@ class AppWebPage extends WebPage
         $this->appendCssUrl('css/style.css');
     }
 
+    public function appendMenu(string $content): void
+    {
+        $this->menu .= $content;
+    }
+
+    public function getMenu(): string{
+        return $this->menu;
+    }
     /**
      * Produire la page Web complète.
      */
@@ -36,6 +46,7 @@ class AppWebPage extends WebPage
     <body>
         <header class="header">
             <h1 class="header__title">{$this->getTitle()}</h1>
+            {$this->getMenu()}
         </header>
         <section class="content">
 {$this->getBody()}
