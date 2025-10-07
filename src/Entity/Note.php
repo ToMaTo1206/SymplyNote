@@ -53,4 +53,17 @@ SQL);
         return $stmt->fetchObject(Note::class);
     }
 
+    public function deleteNote(): void
+    {
+        $stmt = MyPdo::getInstance()->prepare(
+            <<<'SQL'
+    DEETE id, user_id, title, content, created_at, updated_at 
+    FROM note
+    WHERE id = :id
+SQL);
+
+        $stmt->execute(['id' => $this->getId()]);
+    }
+
+
 }
