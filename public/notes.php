@@ -27,6 +27,7 @@ try {
 $notes = Entity\Collection\NoteCollection::findAllNotesFromUser($user->getId());
 
 $webPage = new AppWebPage('Liste des notes');
+$webPage->appendMenu("<a href='addNote.php'>Ajouter Note ?</a>");
 
 $webPage->appendContent("<div class='listNotes'>");
 foreach ($notes as $note) {
