@@ -31,6 +31,8 @@ $note = \Entity\Note::findNoteById((int) $_GET['id']);
 
 $webPage = new AppWebPage("{$note->getTitle()}");
 
+$webPage->appendMenu("<a href=\"notes.php\">Back to notes</a><a href='updateNote.php?id={$note->getId()}'>modifier note ?</a>");
+
 $webPage->appendContent("<p class='note'>");
 $webPage->appendContent("<p>{$note->getContent()}</p>");
 $webPage->appendContent('</p>');
