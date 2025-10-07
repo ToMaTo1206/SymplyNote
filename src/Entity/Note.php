@@ -87,4 +87,48 @@ SQL);
         $stmt->execute(['id' => $this->getId()]);
     }
 
+    public function addNote(): void
+    {
+        $stmt = MyPdo::getInstance()->prepare(
+            <<<SQL
+        INSERT INTO note (title, content, user_id)
+        VALUES (:title, :content, :user_id)
+        SQL
+        );
+        $stmt->execute([
+            'title' => $this->title,
+            'content' => $this->content,
+            'user_id' => $this->user_id,
+        ]);
+
+        $this->id = (int) MyPdo::getInstance()->lastInsertId();
+    }
+
+    /**
+     * @param int $user_id
+     */
+    public function setUserId(int $user_id): void
+    {
+        $this->user_id = $user_id;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @param string $content
+     */
+    public function setContent(string $content): void
+    {
+        $this->content = $content;
+    }
+
+
+
+
 }
