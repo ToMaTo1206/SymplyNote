@@ -78,13 +78,19 @@ SQL);
     public function updateNote(): void
     {
         $stmt = MyPdo::getInstance()->prepare(
-            <<<'SQL'
-    UPDATE id, user_id, title, content, created_at, updated_at 
-    FROM note
-    WHERE id = :id
-SQL);
-
-        $stmt->execute(['id' => $this->getId()]);
+            <<<SQL
+        UPDATE note
+        SET title = :title,
+            content = :content,
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = :id
+        SQL
+        );
+        $stmt->execute([
+            'title' => $this->title,
+            'content' => $this->content,
+            'id' => $this->id,
+        ]);
     }
 
     public function addNote(): void
