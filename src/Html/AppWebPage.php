@@ -44,7 +44,7 @@ class AppWebPage extends WebPage
 {$this->getHead()}
     </head>
     <body class="container-fluid d-flex flex-column vh-100 bg-success-subtle">
-        <header class="d-flex justify-content-center align-items-center">
+        <header class="d-flex justify-content-between align-items-center">
             <h1 class="d-flex justify-content-center m-2">{$this->getTitle()}</h1>
             {$this->getMenu()}
         </header>
