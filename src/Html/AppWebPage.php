@@ -16,7 +16,6 @@ class AppWebPage extends WebPage
     public function __construct(string $title = '')
     {
         parent::__construct($title);
-        $this->appendCssUrl('css/style.css');
     }
 
     public function appendMenu(string $content): void
@@ -41,19 +40,21 @@ class AppWebPage extends WebPage
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{$this->getTitle()}</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 {$this->getHead()}
     </head>
-    <body>
-        <header class="header">
-            <h1 class="header__title">{$this->getTitle()}</h1>
+    <body class="container-fluid d-flex flex-column vh-100 bg-success-subtle">
+        <header class="d-flex justify-content-center align-items-center">
+            <h1 class="d-flex justify-content-center m-2">{$this->getTitle()}</h1>
             {$this->getMenu()}
         </header>
-        <section class="content">
+        <section class="container-fluid d-flex justify-content-center align-items-center flex-grow-1"> 
 {$this->getBody()}
         </section>
-        <footer class="footer">
-            <div>Dernière modification : {$lastModification}</div>
+        <footer class="column-gap-3">
+            <div></div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
 HTML;

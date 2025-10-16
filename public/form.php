@@ -13,7 +13,6 @@ use Service\Exception\SessionException;
 
 $authentication = new UserAuthentication();
 $p = new AppWebPage('Authentification');
-$p->appendCssUrl('css/style.css');
 
 try {
     if ('POST' === $_SERVER['REQUEST_METHOD']) {
@@ -33,13 +32,14 @@ form input {
 }
 CSS);
 
-// Affichage du formulaire
 $form = $authentication->loginForm('form.php', 'Se connecter');
 
 $p->appendContent(<<<HTML
+    <div class="d-flex flex-column justify-content-center align-items-center flex-grow-1">
     <h1>Connexion</h1>
     {$form}
-    <p>Pour faire un test : essai / toto</p>
+    <a href="addUser.php">Pas de compte ?</a>
+    </div>
 HTML);
 
 echo $p->toHTML();

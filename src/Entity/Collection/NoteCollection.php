@@ -4,13 +4,11 @@ namespace Entity\Collection;
 
 use Database\MyPdo;
 use Entity\Note;
-use PDO;
 
 class NoteCollection
 {
     public static function findAllNotesFromUser(int $userId): array
     {
-
         $stmt = MyPdo::getInstance()->prepare(
             <<<'SQL'
     SELECT id, user_id, title, content, created_at, updated_at 
@@ -20,7 +18,7 @@ class NoteCollection
 SQL);
 
         $stmt->execute(['user_id' => $userId]);
-        return $stmt->fetchAll(PDO::FETCH_CLASS, Note::class);
-    }
 
+        return $stmt->fetchAll(\PDO::FETCH_CLASS, Note::class);
+    }
 }

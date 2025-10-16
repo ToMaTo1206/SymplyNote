@@ -8,7 +8,7 @@ use Entity\Note;
 use Html\AppWebPage;
 use Service\Exception\SessionException;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 $authentification = new UserAuthentication();
 
@@ -28,11 +28,11 @@ try {
 $webPage = new AppWebPage('Nouvelle note');
 
 // Si le formulaire a été soumis
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ('POST' === $_SERVER['REQUEST_METHOD']) {
     $title = trim($_POST['title'] ?? '');
     $content = trim($_POST['content'] ?? '');
 
-    if ($title === '' || $content === '') {
+    if ('' === $title || '' === $content) {
         $webPage->appendContent("<p style='color:red;'>Veuillez remplir tous les champs.</p>");
     } else {
         // Création de la note
@@ -53,6 +53,7 @@ $webPage->appendContent(<<<HTML
     <label for="title">Titre :</label><br>
     <input type="text" id="title" name="title" required><br><br>
 
+
     <label for="content">Contenu :</label><br>
     <textarea id="content" name="content" rows="6" cols="40" required></textarea><br><br>
 
@@ -61,4 +62,3 @@ $webPage->appendContent(<<<HTML
 HTML);
 
 echo $webPage->toHTML();
-

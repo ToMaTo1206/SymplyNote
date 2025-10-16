@@ -70,4 +70,36 @@ SQL
 
         return $user;
     }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function setFirstName(string $firstName): void
+    {
+        $this->firstName = $firstName;
+    }
+
+    public function setLastName(string $lastName): void
+    {
+        $this->lastName = $lastName;
+    }
+
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
+    }
+
+    public function setLogin(string $login): void
+    {
+        $this->login = $login;
+    }
+
+    public function setPhone(string $phone): void
+    {
+        $this->phone = $phone;
+    }
+
+
 }

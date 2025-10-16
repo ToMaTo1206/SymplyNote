@@ -28,9 +28,8 @@ try {
 
 $webPage = new AppWebPage('Accueil - SymplyNote');
 
-$webPage->appendCssUrl('css/style.css');
 
-$webPage->appendContent("<div class='content-left'>");
+$webPage->appendContent("<div class='col-8'>");
 $webPage->appendContent(
     <<<HTML
     <h2>Bienvenue {$user->getFirstName()} {$user->getLastName()}</h2>
@@ -43,7 +42,7 @@ HTML
 
 $webPage->appendContent('</div>');
 
-$webPage->appendContent("<div class='content-right'>");
+$webPage->appendContent("<div class='col-2 d-flex flex-column justify-content-center'>");
 $webPage->appendContent("<a href='notes.php'>Voir toutes les notes ?</a>");
 $webPage->appendContent($authentification->logoutForm('index.php', 'Se déconnecter'));
 $webPage->appendContent('</div>');
